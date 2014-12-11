@@ -140,7 +140,7 @@ globalTunnel._makeAgent = function(conf, innerProtocol, useCONNECT) {
   innerProtocol = innerProtocol + ':';
 
   var opts = {
-    proxy: _.pick(conf, 'host','port','protocol','localAddress', 'proxyAuth'),
+    proxy: _.pick(conf, 'host','port','protocol','localAddress', 'proxyAuth', 'ca'),
     maxSockets: conf.sockets
   };
   opts.proxy.innerProtocol = innerProtocol;
