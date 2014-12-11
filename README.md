@@ -21,6 +21,7 @@ var globalTunnel = require('global-tunnel');
 globalTunnel.initialize({
   host: '10.0.0.10',
   port: 8080,
+  proxyAuth: 'user:pass',
   sockets: 50 // optional pool size for each http and https
 });
 ```
@@ -46,6 +47,8 @@ The complete list of options to `globalTunnel.initialize`:
 
 - **host** - the hostname or IP of the HTTP proxy to use
 - **port** - the TCP port to use on that proxy
+- **proxyAuth** - Optional authentication credentials for the proxy.
+  In the form 'username:password'
 - **tunnel** _(optional)_ controls what protocols use the `CONNECT` method.  It
   has three possible values (strings):
   - **neither** - don't use `CONNECT`; just use absolute URIs
